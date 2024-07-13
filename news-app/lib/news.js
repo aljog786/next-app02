@@ -1,4 +1,4 @@
-import { sampleNews } from '../../backend/data';
+import { sampleNews } from '../sample-news';
 
 export function getAllNews() {
   return sampleNews;

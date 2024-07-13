@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { sampleNews } from "../../../../backend/data"
+import { sampleNews } from "../../../../sample-news";
 
 export default function page({params}) {
     const newsSlug = params.slug;

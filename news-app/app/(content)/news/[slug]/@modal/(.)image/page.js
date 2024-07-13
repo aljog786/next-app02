@@ -1,7 +1,7 @@
 'use client'
 
 import { notFound,useRouter } from "next/navigation";
-import { sampleNews } from "../../../../../../backend/data";
+import { sampleNews } from "../../../../../../sample-news";
 
 export default function interceptedImagePage({params}) {
 

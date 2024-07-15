@@ -1,8 +1,9 @@
 import express from 'express';
-import sqlite from 'better-sqlite3';
+import mongoose from 'mongoose';
 import cors from 'cors';
+import News from './model/model.js'
 
-const DUMMY_NEWS = [
+const sampleNews = [
   {
     id: 'n1',
     slug: 'will-ai-replace-humans',
@@ -50,35 +51,29 @@ const DUMMY_NEWS = [
   },
 ];
 
-const db = sqlite('data.db');
+const app = express();
+app.use(cors());
 
-function initDb() {
-  db.prepare(
-    'CREATE TABLE IF NOT EXISTS news (id INTEGER PRIMARY KEY, slug TEXT UNIQUE, title TEXT, content TEXT, date TEXT, image TEXT)'
-  ).run();
+const uri = 'mongodb+srv://aljog786:alb78Re6t@cluster0.czq1l0r.mongodb.net/nextnews'
 
-  const { count } = db.prepare('SELECT COUNT(*) as count FROM news').get();
+mongoose.connect(uri, {});
 
+async function initDb() {
+  const count = await News.countDocuments();
   if (count === 0) {
-    const insert = db.prepare(
-      'INSERT INTO news (slug, title, content, date, image) VALUES (?, ?, ?, ?, ?)'
-    );
-
-    DUMMY_NEWS.forEach((news) => {
-      insert.run(news.slug, news.title, news.content, news.date, news.image);
-    });
+    await News.insertMany(sampleNews);
   }
 }
 
-const app = express();
-
-app.use(cors())
-
-app.get('/news', (req, res) => {
-  const news = db.prepare('SELECT * FROM news').all();
+app.get('/news', async (req, res) => {
+  const news = await News.find();
   res.json(news);
 });
 
-initDb();
-
-app.listen(8080);
+mongoose.connection.once('open', () => {
+  initDb().then(() => {
+    app.listen(8080, () => {
+      console.log('Server is running on http://localhost:8080');
+    });
+  });
+});

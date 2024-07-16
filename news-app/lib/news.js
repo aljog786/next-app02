@@ -1,8 +1,34 @@
 import { sampleNews } from '../sample-news';
 
+import { useEffect, useState } from 'react';
+
 export function getAllNews() {
-  return sampleNews;
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    async function fetchNews() {
+      setIsLoading(true);
+      try {
+        const response = await fetch('http://localhost:8080/news');
+        if (!response.ok) {
+          throw new Error('Failed to fetch news');
+        }
+        const newsData = await response.json();
+        setNews(newsData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchNews();
+  }, []);
+
+  return { isLoading, error, news };
 }
+
 
 export function getLatestNews() {
   return sampleNews.slice(0, 3);

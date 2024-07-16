@@ -1,0 +1,47 @@
+[
+    {
+    "_id": "6694d396c28053107eef84e0",
+    "slug": "will-ai-replace-humans",
+    "title": "Will AI Replace Humans?",
+    "content": "Since late 2022 AI is on the rise and therefore many people worry whether AI will replace humans. The answer is not that simple. AI is a tool that can be used to automate tasks, but it can also be used to augment human capabilities. The future is not set in stone, but it is clear that AI will play a big role in the future. The question is how we will use it.",
+    "date": "2021-07-01",
+    "image": "ai-robot.jpg",
+    "__v": 0
+    },
+    {
+    "_id": "6694d396c28053107eef84e1",
+    "slug": "beaver-plague",
+    "title": "A Plague of Beavers",
+    "content": "Beavers are taking over the world. They are building dams everywhere and flooding entire cities. What can we do to stop them?",
+    "date": "2022-05-01",
+    "image": "beaver.jpg",
+    "__v": 0
+    },
+    {
+    "_id": "6694d396c28053107eef84e2",
+    "slug": "couple-cooking",
+    "title": "Spend more time together!",
+    "content": "Cooking together is a great way to spend more time with your partner. It is fun and you get to eat something delicious afterwards. What are you waiting for? Get cooking!",
+    "date": "2024-03-01",
+    "image": "couple-cooking.jpg",
+    "__v": 0
+    },
+    {
+    "_id": "6694d396c28053107eef84e3",
+    "slug": "hiking",
+    "title": "Hiking is the best!",
+    "content": "Hiking is a great way to get some exercise and enjoy the great outdoors. It is also a great way to clear your mind and reduce stress. So what are you waiting for? Get out there and start hiking!",
+    "date": "2024-01-01",
+    "image": "hiking.jpg",
+    "__v": 0
+    },
+    {
+    "_id": "6694d396c28053107eef84e4",
+    "slug": "landscape",
+    "title": "The beauty of landscape",
+    "content": "Landscape photography is a great way to capture the beauty of nature. It is also a great way to get outside and enjoy the great outdoors. So what are you waiting for? Get out there and start taking some pictures!",
+    "date": "2022-07-01",
+    "image": "landscape.jpg",
+    "__v": 0
+    }
+    ]
